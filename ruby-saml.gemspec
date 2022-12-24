@@ -49,9 +49,9 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency('coveralls')
   s.add_development_dependency('minitest', '~> 5.5')
-  s.add_development_dependency('mocha',    '~> 0.14')
-  s.add_development_dependency('rake',     '~> 10')
-  s.add_development_dependency('shoulda',  '~> 2.11')
+  s.add_development_dependency('mocha',    '< 3')
+  s.add_development_dependency('rake',     '< 14')
+  s.add_development_dependency('shoulda',  '< 6')
   s.add_development_dependency('simplecov')
   s.add_development_dependency('systemu',  '~> 2')
 
@@ -74,7 +74,7 @@ Gem::Specification.new do |s|
   elsif RUBY_VERSION < '2.1'
     # 2.0.x
     s.add_development_dependency('byebug', '~> 2.1.1')
-  else
+  elsif RUBY_VERSION < '3.2'
     # 2.1.x, 2.2.x
     s.add_development_dependency('pry-byebug')
   end
