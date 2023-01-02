@@ -1,11 +1,13 @@
-require 'simplecov'
-require 'coveralls'
+unless %w(jruby truffleruby).include?(RUBY_ENGINE)
+  require 'simplecov'
+  require 'coveralls'
 
-SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-SimpleCov.start do
-  add_filter "test/"
-  add_filter "vendor/"
-  add_filter "lib/onelogin/ruby-saml/logging.rb"
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+  SimpleCov.start do
+    add_filter "test/"
+    add_filter "vendor/"
+    add_filter "lib/onelogin/ruby-saml/logging.rb"
+  end
 end
 
 require 'stringio'
